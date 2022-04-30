@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import './Form.css'
 function Form(props) {
   const [InputText, setInputText] = useState("");
-
+  const [count, setCount] = useState(0);
+  
+  
   const onsubmitHandeler = (Submitevent) => {
     Submitevent.preventDefault();
     //   console.log( event.target[0].value);
 
-    const Submitdata = { data: Submitevent.target[0].value }; //bindind input data as an object
+    const Submitdata = { data: Submitevent.target[0].value , id:count}; //bindind input data as an object
     // console.log(Submitdata);
     if (Submitdata.data === "") {
       window.alert("Kindly add a task");
@@ -30,7 +32,7 @@ function Form(props) {
           onChange={oninputHandeler}
           value={InputText}
         ></input>
-        <button type="Submit">Add TODO Task</button>
+        <button type="Submit" onClick={() => setCount(count + 1)}>Add TODO Task</button>
       </form>
     </div>
   );

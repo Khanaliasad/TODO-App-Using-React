@@ -14,8 +14,7 @@ const Main = (props) => {
       // console.log("this is updated task :" + updatedTasks);
       return updatedTasks;
     });
-    // console.log("setState in formHandeler SavedFormData:");
-    // console.log(SavedFormData);
+   
   };
   let Question = [
     <div>
@@ -30,7 +29,7 @@ const Main = (props) => {
     <Card className='props.className' >
       <Form data={FormDataHandeler}></Form>
       {SavedFormData.map((params) => (
-        <Task key={params.data} data={params.data}></Task>
+        <Task key={params.id} data={params.data}></Task>
       ))}
       
     </Card>
